@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
-// Pisoco Contracts
+/** @title IATA SSIM 
+* @notice Provides structs and functions for creating and parsing messages
+* @author ismail kahraman <izmael@gmail.com> | pisoco.com
+*/
 pragma solidity ^0.8.0;
 
 import "./MessageSpec.sol";
@@ -7,7 +10,24 @@ import "./MessageSpec.sol";
 /**
  * @dev IATA SSM specifications
  */
-library StandardScheduleMessages {
+abstract contract StandardScheduleMessages {
+
+
+struct COMMON {
+    MessageSpec.Types _type;
+    MessageSpec.MessageHeading _header;
+    MessageSpec.MessageReference _reference;
+    MessageSpec.ActionInformation _action;
+    MessageSpec.FlightInformation _flight;
+    MessageSpec.FrequencyInformation _frequency;
+    MessageSpec.EquipmentInformation _equipment;
+    MessageSpec.LegInformation _route;
+    MessageSpec.SegmentInformation _segment;
+    MessageSpec.SupplementaryInformation[] _subSupplementary;
+    MessageSpec.SupplementaryInformation _wholeSupplementary; 
+    MessageSpec.RejectInformation _reject;
+    MessageSpec.RepeatOfRejectedMessage _repeatMsg;
+}
 
 /**
  * @dev Insertion of New Flight Information

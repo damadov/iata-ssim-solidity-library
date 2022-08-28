@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
-// Pisoco Contracts
+/** @title IATA SSIM 
+* @notice Provides structs and functions for creating and parsing messages
+* @author ismail kahraman <izmael@gmail.com> | pisoco.com
+*/
 pragma solidity ^0.8.0;
 
 
